@@ -174,7 +174,7 @@ module "private_ec2" {
   source = "../modules/ec2"
   ami = "${var.private_ami}"
   subnet_id = "${module.my_vpc.public_subnet_id}"
-  associate_public_ip_address = "0"
+  associate_public_ip_address = false
   key_name  = "${var.key_name}"
   vpc_security_group_ids = ["${module.prv_ec2_sg.security_group_id}"]
   user_data = <<EOF
